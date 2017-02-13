@@ -1,0 +1,154 @@
+{% extends 'no_banner_base.html' %}
+{% block headers_scripts_after_sqs %}
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='signup.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='common.css') }}">
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/spin.js') }}"></script>
+
+<style>
+    p {
+        font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+</style>
+<script type="text/javascript">
+    var $SCRIPT_ROOT = {
+    {
+        request.script_root | tojson | safe
+    }
+    }
+    ;
+</script>
+{% endblock %}
+{% block content %}
+<div id="login-module">
+    <div id="existing-user">
+
+        <div class="form-wrapper">
+
+            <p class="form-header" style="letter-spacing: 2px">SIGN IN TO VOYAJOY</p>
+            <div class="field-list clear">
+                <div class="form-item field email">
+
+                    <form id="login-form">
+                        <fieldset>
+                            <!--<label for="email" class="bold_text control-label">Email:</label>-->
+                            {% if request.args.get('next') %}
+                            <input type="hidden" value="{{ request.args.get('next') }}" name="next">
+                            {% endif %}
+                            <input class="field-element required" id="email" name="email" placeholder="Enter your email"
+                                   type="text">
+                            <!--<label for="password" class="bold_text control-label">Password:</label>-->
+                            <input class="field-element required" id="password" name="password"
+                                   placeholder="Enter your password" type="password">
+                            <div id="spinner" style="position: relative; margin: 0.5em;"></div>
+                            <ul id="error-container"></ul>
+                            <div id="error-message" class="error-message"></div>
+                            <script type="text/javascript">
+
+                                var validateEmail = function (email) {
+                                    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                                        return true;
+                                    }
+                                    return false;
+                                };
+
+                                var setBorderRed = function (element) {
+                                    element.css('border-color', 'red');
+                                };
+
+                                var setBorderNone = function (element) {
+                                    element.css('border-color', '');
+                                };
+
+                                var getErrorListItem = function (error) {
+                                    return '<li style="color: red; font-size: 0.8em;">' + error + '</li>'
+                                };
+
+                                var validateForm = function () {
+                                    var email = document.getElementById("email").value;
+                                    var password = document.getElementById("password").value;
+                                    var errorContainer = $("#error-container");
+                                    var error = false;
+                                    setBorderNone($("#email"));
+                                    setBorderNone($("#password"));
+                                    errorContainer.empty();
+                                    if (email == null || email == "") {
+                                        errorContainer.append(getErrorListItem('Please enter an email address'));
+                                        setBorderRed($("#email"));
+                                        error = true;
+                                    }
+                                    if (!validateEmail(email)) {
+                                        errorContainer.append(getErrorListItem('Please enter a valid email address'));
+                                        setBorderRed($("#email"));
+                                        error = true;
+                                    }
+                                    if (password == null || password == "") {
+                                        errorContainer.append(getErrorListItem('Please enter a password'));
+                                        setBorderRed($("#password"));
+                                        error = true;
+                                    }
+                                    if (error) {
+                                        return false;
+                                    }
+
+                                    setBorderNone($("#email"));
+                                    setBorderNone($("#password"));
+                                    return true;
+                                };
+
+                                var spinner = new Spinner({
+                                    lines: 9, // The number of lines to draw
+                                    length: 4, // The length of each line
+                                    width: 2, // The line thickness
+                                    radius: 6, // The radius of the inner circle
+                                    color: '#000', // #rbg or #rrggbb
+                                    speed: 1, // Rounds per second
+                                    trail: 25, // Afterglow percentage
+                                    shadow: true // Whether to render a shadow
+                                });
+
+
+                            var signin = function () {
+                                $("#error-message").empty();
+                                var formValid = validateForm();
+                                if (formValid) {
+                                    spinner.spin(document.getElementById("spinner"));
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "/loginAjax",
+                                        data: $("#login-form").serialize(),
+                                        success: function (data) {
+                                            spinner.stop();
+                                            if (data.success) {
+                                                // data.redirect contains the string URL to redirect to
+                                                window.location.href = data.target;
+                                            }
+                                            else {
+                                                spinner.stop();
+                                                $("#error-message").text(data.message);
+                                            }
+                                        }
+                                    });
+                                }
+                            };
+                            </script>
+                            <button class="voyajoy-btn" type="button"
+                                   onclick="signin()">Continue</button>
+                            <p style="text-align: right;"><a style="color: #56b944" href="/forgot_password">Forgot Password</a></p>
+                            <p style="text-align: right; margin-top: 0;">Don't have an account? <a style="color: #56b944" href="{% if request.args.get('next') %}{{ url_for('sign_up', next=request.args.get('next')) }}{% else %}{{ url_for('sign_up')}}{% endif %}">Sign Up</a></p>
+                        </fieldset>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div><!-- comment the linebreak between these two elements because science
+                -->
+{% endblock %}
+
+{% block prefooter %}{% endblock %}

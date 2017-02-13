@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <style type="text/css">
+
+        @font-face {
+            font-family: "proxima-nova"; src: url('fonts/ProximaNova-Regular.otf');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size:16px;
+            line-height:22px;
+        }
+
+        #logo {
+            width: 100%;
+            text-align: center;
+            margin: 36px 0;
+        }
+        #receipt-container {
+            /*background-color: #E2E2E2;*/
+            background-color: white;
+            padding: 2em 2em;
+
+
+        }
+        .booking-details-header {
+            background-color: #55B948;
+            width: 100%;
+            text-align: left;
+            padding: 0.6em 0;
+        }
+
+        .booking-details-body {
+            background-color: white;
+            width: 100%;
+            padding: 0.6em 0;
+            margin-bottom: 5em;
+        }
+        .booking-details-header-text {
+            color: white;
+        }
+
+        p {
+            color: black;
+            font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+            margin: 5px;
+            font-size: 14px;
+            font-weight:300;
+            padding: 0 0.6em;
+        }
+
+        .reservation-dates {
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .receipt-header-container {
+            text-align: center;
+            padding-left: 1em;
+            margin: 3em 0;
+        }
+
+        .spacer {
+            margin: 1.5em 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+
+
+    <!--<p style="color:#574751">-->
+    <!--Hi, {{ reservation.renter.fullName }}!-->
+    <!--</p>-->
+    <!--<p style="margin-top:20px;color:#574751">-->
+    <!--This is your booking confirmation. Thanks so much for booking up with Voyajoy. Please review your booking details below: </p>-->
+
+
+    <div id="receipt-container">
+        <div id="logo">
+            <a>
+                <img src="http://static1.squarespace.com/static/569ab3d3d8af100e8507d8d7/t/569c5a7442f55250d91d4f6d/1453844027786/?format=110w">
+            </a>
+        </div>
+
+        <div class="receipt-header-container">
+            <p>Receipt Confirmation #: {{ reservation.objectId }}</p>
+            <p>September 21, 2015</p>
+        </div>
+
+        <div class="booking-details-container">
+            <div class="booking-details-header">
+                <p class="booking-details-header-text">Billing Details for {{ reservation.renter.fullName }}</p>
+            </div>
+
+            <div class="booking-details-body">
+                <p class="booking-details-body-item">Method: Credit Card</p>
+                <p class="booking-details-body-item">Card: xxxxxxxxxxxx1234</p>
+                <div class="spacer"></div>
+                <p class="booking-details-body-item">Rental Fee (${{ reservation.rentalFee }} x {{ reservation.numNights
+                    }}: ${{ reservation.rentalFee * reservation.numNights }}</p>
+                <p class="booking-details-body-item">Discount: {{ reservation.discountedRate }}%</p>
+                <p class="booking-details-body-item">Cleaning Fee: ${{ reservation.cleaningFee }}</p>
+                {% if reservation.securityDeposit > 0 %}
+                <p class="booking-details-body-item">Security Deposit: ${{ reservation.securityDeposit }}</p>
+                {% endif %}
+                {% if reservation.taxes > 0 %}
+                <p class="booking-details-body-item">Taxes ({{ reservation.taxRate }}%): ${{ reservation.taxes }}%</p>
+                {% endif %}
+                <div class="spacer"></div>
+                <p class="booking-details-body-item">Total: ${{ reservation.total }}</p>
+            </div>
+        </div>
+
+        <div class="booking-details-container">
+            <div class="booking-details-header">
+                <p class="booking-details-header-text">Reservation Details</p>
+            </div>
+
+            <div class="booking-details-body">
+                <p class="booking-details-body-item"><strong>Listing</strong>: <a style="color: blue;"
+                                                                                  href="{{ listing_url }}">{{
+                    reservation.listing.headline }}</a></p>
+                <div class="spacer"></div>
+                <p class="booking-details-body-item">Guests: {{ reservation.numGuests }}</p>
+                <p class="booking-details-body-item">Address: {{ reservation.listing.placeDetails.street }}, {{
+                    reservation.listing.placeDetails.city }} {{ reservation.listing.placeDetails.zipcode }}</p>
+                <div class="spacer"></div>
+                <p class="booking-details-body-item reservation-dates">Check In: ${{ reservation.arrivalDate }}</p>
+                <p class="booking-details-body-item reservation-dates">Check Out: ${{ reservation.departureDate }}</p>
+            </div>
+
+
+        </div>
+
+
+        <p style="margin-top:20px;text-align:center;">
+            If you have any questions or problems, please contact us: <a href="mailto:support@voyajoy.com"
+                                                                         style="text-decoration:none;color:#blue"
+                                                                         target="_blank">support@voyajoy.com</a>
+        </p>
+        <p style="text-align:center;color:#bcb5b9;font-weight:300;margin:30px auto">
+            Voyajoy Team
+        </p>
+    </div>
+</div>
+</body>
+</html>

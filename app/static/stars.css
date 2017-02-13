@@ -1,0 +1,25 @@
+span.stars, span.stars span {
+    display: block;
+    background: url(../static/image/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
+}
+
+.star-ratings {
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    justify-content: flex-end;
+}
+
+.num-star-ratings {
+    font-size: 0.8em;
+    position: relative;
+    left: 0.5em;
+    margin-right: 1em;
+    color: #535353;
+}

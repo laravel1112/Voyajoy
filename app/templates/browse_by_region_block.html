@@ -1,0 +1,42 @@
+<div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1453243512088"
+     id="page-569d5c7c5a5668a5945745a4">
+    <div class="row sqs-row">
+        <div class="col sqs-col-12 span-12">
+            <div class="sqs-block code-block sqs-block-code" data-block-type="23"
+                 id="block-yui_3_17_2_3_1453240859384_11159">
+                <div class="sqs-block-content">
+                    <div id="nameYourOwnDiv">
+                    </div>
+                </div>
+            </div>
+            <div class="sqs-block html-block sqs-block-html" data-block-type="2"
+                 id="block-yui_3_17_2_12_1453158231643_10111">
+                <div class="sqs-block-content">
+                    <h1 class="featured-homes text-align-center" style="margin: 2em 0"><strong>BROWSE VACATION
+                        HOMES</strong></h1>
+                    {% for city_row in cities | batch(2) %}
+                    <div class="row sqs-row">
+                        {% if city_row|length > 1 %}
+                        {% for city in city_row %}
+                        <div class="col sqs-col-6 span-6">
+                            <div class="sqs-block image-block sqs-block-image" data-block-type="5">
+                                {% include 'card_block.html' %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        {% for city in city_row %}
+                        <div class="col sqs-col-12 span-12">
+                            <div class="sqs-block image-block sqs-block-image" data-block-type="5">
+                                {% include 'card_block.html' %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

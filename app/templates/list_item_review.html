@@ -1,0 +1,22 @@
+<div class="sqs-block code-block sqs-block-code" data-block-type="23"
+     id="block-yui_3_17_2_3_1453337106982_18501">
+    <div class="sqs-block-content" style="text-align: center;">
+        <div><img style="width: 100px; height: auto; border-radius: 50%; margin-top: 2em" src="{{ review.reviewer_avatar }}"/></div>
+        <p style="margin-top: 1em; font-size: 1em; color: #5d5d5d; font-weight: bold;">{{ review.reviewer_name }}</p>
+        {% if review.reviewer_location %}
+        <p style="font-size: 0.8em; color: #5d5d5d; font-weight: bold;">{{ review.reviewer_location }}</p>
+        {% endif %}
+        {% if review.rating %}
+        <div><span style="margin: 1em auto;" class="stars">{{ review.rating }}</span></div>
+        {% endif %}
+        <p style="margin-top: 1em;">
+            <span class="listing-header-span">{{ review.body | safe }}</span>
+        </p>
+        {% if review.datetime_submitted %}
+        <p style="text-align: center; margin: 1em 3em; font-size: 0.9em; color: #bcbcbc">
+            <span class="listing-header-span">{{ get_friendly_date(review.datetime_submitted) }}</span>
+        </p>
+        {% endif %}
+    </div>
+</div>
+<hr />

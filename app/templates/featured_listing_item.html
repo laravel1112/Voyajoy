@@ -1,0 +1,53 @@
+<div class="image-block-outer-wrapper layout-caption-overlay-hover ">
+
+    <div class="intrinsic" style="max-width:1134.0px;">
+
+        <a href="/rentals/{{ featured_listings[n].objectId }}">
+            <div style="padding-bottom:66.31393432617188%;"
+                 class="image-block-wrapper   has-aspect-ratio"
+                 data-description="&lt;p&gt;world&lt;/p&gt;">
+                <noscript><img
+                        src="{{ featured_listings[n].photos[0].large }}"/>
+                </noscript>
+                <img class="thumb-image"
+                     data-src="{{ featured_listings[n].photos[0].large }}"
+                     data-image="{{ featured_listings[n].photos[0].large }}"
+                     data-image-dimensions="1134x752"
+                     data-image-focal-point="0.5,0.5" data-load="false"
+                     data-image-id="56a5a9bb8b38d48e2c1e7877"
+                     data-type="image"/>
+                {% if featured_listings[n].discountedRate != 0 %}
+                <div class="discount-flag"><span>{{ featured_listings[n].discountedRate }}&#37; Off</span>
+                </div>
+                {% else %}
+                {% endif %}
+            </div>
+            <div class="featured-listing-details">
+                <p>{{ featured_listings[n].headline }}</p>
+                <p>{{ featured_listings[n].bedrooms }}BD/{{
+                    featured_listings[n].bathrooms }}BA - {{
+                    featured_listings[n].housingType }}</p>
+                {% if featured_listings[n].reviewRating > 0 %}
+                <div class="star-ratings">
+                    <span class="stars">{{ featured_listings[n].reviewRating }}</span>
+                    <p class="num-star-ratings">({{
+                        featured_listings[n].reviewCount }})</p>
+                </div>
+                {% else %}
+                <div class="star-ratings" style="display: none">
+                    <span class="stars">{{ featured_listings[n].reviewRating }}</span>
+                    <p class="num-star-ratings">({{
+                        featured_listings[n].reviewCount }})</p>
+                </div>
+                {% endif %}
+                {% if featured_listings[n].placeDetails.city and featured_listings[n].placeDetails.state %}
+                <p>{{ featured_listings[n].placeDetails.city }}, {{
+                    featured_listings[n].placeDetails.state }}</p>
+                {% endif %}
+            </div>
+        </a>
+
+
+    </div>
+
+</div>

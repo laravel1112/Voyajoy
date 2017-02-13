@@ -1,0 +1,36 @@
+.rental-fee-flag {
+    text-decoration: line-through;
+}
+
+.banner-thumbnail-wrapper {
+    z-index: 5;
+}
+
+.listing-header-span {
+    font-size: 16px;
+}
+
+p, h1 {
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.featured-listing-details {
+    position: relative;
+    padding: 0.5em 1em;
+}
+
+.featured-listing-details p:nth-child(2) {
+    color: #535353;
+    font-size: 0.9em;
+}
+
+.featured-listing-details p:nth-child(4) {
+    text-align: right;
+    color: #535353;
+
+}
+
+.featured-homes {
+    letter-spacing: 2px;
+    font-family: proxima-nova-bold;
+}

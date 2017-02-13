@@ -1,0 +1,119 @@
+.ribbon {
+   position: absolute;
+   right: 0px; top: 0px;
+   z-index: 1;
+   overflow: hidden;
+   width: 75px; height: 75px;
+   text-align: right;
+}
+.ribbon span {
+   font-size: 16px;
+   color: #fff;
+   text-transform: uppercase;
+   text-align: center;
+   font-weight: bold; line-height: 26px;
+   transform: rotate(45deg);
+   background: #79A70A;
+   background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+   position: absolute;
+   top: 19px; right: -21px;
+}
+
+.ribbon span::before {
+   content: '';
+   position: absolute;
+   left: 0px; top: 100%;
+   z-index: -1;
+   border-left: 3px solid #79A70A;
+   border-right: 3px solid transparent;
+   border-bottom: 3px solid transparent;
+   border-top: 3px solid #79A70A;
+}
+.ribbon span::after {
+   content: '';
+   position: absolute;
+   right: 0%;
+   top: 100%;
+   z-index: -1;
+   border-right: 3px solid #79A70A;
+   border-left: 3px solid transparent;
+   border-bottom: 3px solid transparent;
+   border-top: 3px solid #79A70A;
+}
+
+.clearfix{
+   clear: both !important;
+}
+
+
+.featured-listing-details {
+    background-color: #f2f2f2;
+}
+.featured-listing-details p {
+    color: black;
+    margin: 0;
+}
+
+#page {
+    max-width: 1440px;
+    padding: 32px;
+}
+
+@media (max-width: 560px) {
+    #page {
+        padding: 1em;
+    }
+}
+
+@media (max-width: 560px) {
+    .sqs-layout .sqs-row .sqs-block:last-child {
+        padding: 0em;
+    }
+}
+
+.discount-flag {
+   position: absolute;
+   right: 0px; bottom: 0px;
+   z-index: 1;
+   overflow: hidden;
+   width: 150px; height: 100px;
+   text-align: right;
+}
+
+.discount-flag span  {
+   font-size: 18px;
+   color: #fff;
+   text-transform: uppercase;
+   text-align: center;
+   font-weight: bold; line-height: 26px;
+   width: 100px; display: block;
+   background: #79A70A;
+   background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+   position: absolute;
+   bottom: 44px; right: 0px;
+}
+
+.price-flag {
+   position: absolute;
+   right: 0px; bottom: 0px;
+   z-index: 1;
+   overflow: hidden;
+   width: 200px; height: 100px;
+   text-align: right;
+}
+
+.price-flag span  {
+   font-size: 18px;
+   color: #fff;
+   text-transform: uppercase;
+   text-align: center;
+   font-weight: bold; line-height: 26px;
+   width: 150px; display: block;
+   background: #79A70A;
+   background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+   position: absolute;
+   bottom: 12px; right: 0px;
+}

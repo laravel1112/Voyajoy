@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playground</title>
+
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+
+
+          <div id="login-module">
+    <div id="existing-user">
+
+        <div class="form-wrapper">
+
+            <p class="form-header" style="letter-spacing: 2px">SIGN IN TO VOYAJOY</p>
+            <div class="field-list clear">
+                <div class="form-item field email">
+
+                    <form action="login" method="post">
+                        <fieldset>
+                            <!--<label for="email" class="bold_text control-label">Email:</label>-->
+                            {% if request.args.get('next') %}
+                            <input type="hidden" value="{{ request.args.get('next') }}" name="next">
+                            {% endif %}
+                            <input class="field-element required" id="email" name="email" placeholder="Enter your email"
+                                   type="text">
+                            <!--<label for="password" class="bold_text control-label">Password:</label>-->
+                            <input class="field-element required" id="password" name="password"
+                                   placeholder="Enter your password" type="password">
+                            <ul id="error-container"></ul>
+                            {% if error %}
+                            <p class="error-message">{{ error }}</p>
+                            {% endif %}
+                            <script type="text/javascript">
+
+                                var validateEmail = function (email) {
+                                    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                                        return true;
+                                    }
+                                    return false;
+                                };
+
+                                var setBorderRed = function (element) {
+                                    element.css('border-color', 'red');
+                                };
+
+                                var setBorderNone = function (element) {
+                                    element.css('border-color', '');
+                                };
+
+                                var getErrorListItem = function (error) {
+                                    return '<li style="color: red; font-size: 0.8em;">' + error + '</li>'
+                                };
+
+                                var validateForm = function () {
+                                    var email = document.getElementById("email").value;
+                                    var password = document.getElementById("password").value;
+                                    var errorContainer = $("#error-container");
+                                    var error = false;
+                                    setBorderNone($("#email"));
+                                    setBorderNone($("#password"));
+                                    errorContainer.empty();
+                                    if (email == null || email == "") {
+                                        errorContainer.append(getErrorListItem('Please enter an email address'));
+                                        setBorderRed($("#email"));
+                                        error = true;
+                                    }
+                                    if (!validateEmail(email)) {
+                                        errorContainer.append(getErrorListItem('Please enter a valid email address'));
+                                        setBorderRed($("#email"));
+                                        error = true;
+                                    }
+                                    if (password == null || password == "") {
+                                        errorContainer.append(getErrorListItem('Please enter a password'));
+                                        setBorderRed($("#password"));
+                                        error = true;
+                                    }
+                                    if (error) {
+                                        return false;
+                                    }
+
+                                    setBorderNone($("#email"));
+                                    setBorderNone($("#password"));
+                                    return true;
+                                };
+                            </script>
+                            <input class="voyajoy-btn" value="Continue" type="submit"
+                                   onclick="return validateForm()"/>
+                            <p style="text-align: right;"><a style="color: #56b944" href="/forgot_password">Forgot Password</a></p>
+                            <p style="text-align: right; margin-top: 0;">Don't have an account? <a style="color: #56b944" href="/signup">Sign Up</p>
+                        </fieldset>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div><!-- comment the linebreak between these two elements because science
+                -->
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    setTimeout(
+    function() {
+    $('#myModal').modal();
+    }, 3000);
+</script>
+
+</body>
+</html>

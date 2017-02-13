@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <style type="text/css">
+
+        #logo-container {
+            margin-bottom: 3em;
+        }
+
+        .container {
+            margin: 0;
+            padding: 1em;
+            text-align: center;
+            height: auto;
+            max-width: 600px;
+            display: block;
+        }
+
+        #logo {
+            width: 125px;
+            height: auto;
+            text-align: center;
+            margin: 2em 0;
+        }
+
+        p {
+            color: black;
+            font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+            margin: 5px;
+            font-size: 14px;
+            font-weight: 300;
+            padding: 0 0.6em;
+        }
+
+
+        .spacer {
+            margin: 1.5em 0;
+        }
+
+        .reservation-headline {
+            font-size: 2.5em;
+            margin: 0 0;
+        }
+
+        .listing-headline {
+            font-size: 1.5em;
+            margin: 1em 1em;
+        }
+
+        .dates-container {
+            background-color: #eaeaea;
+            margin: 2em 2em;
+            padding: 1em;
+            text-align: center;
+        }
+
+        .dates-header {
+            font-size: 1.2em;
+        }
+
+        .dates-value {
+            font-size: 1.7em;
+            font-weight: bold;
+        }
+
+        .price-keys {
+            text-align: right;
+            font-size: 1.2em;
+        }
+
+        .price-values {
+            text-align: left;
+            font-size: 1.2em;
+        }
+
+        #total-key,
+        #total-value {
+            font-weight: bold;
+        }
+
+        .payment-container {
+            margin: 2em 0;
+        }
+        .payment-info {
+            font-size: 1em;
+        }
+
+        .receipt-details {
+            font-size: 1em;
+        }
+
+        .receipt-details-container {
+            margin: 2em 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="logo-container">
+        <a href="{{ url_for('index', _external=True) }}">
+            <img id="logo" src="http://res.cloudinary.com/djrymcpim/image/upload/v1455764311/voiyajoy_black_mtyhyp.png">
+        </a>
+    </div>
+
+    <div class="reservation-headline-container">
+        <p class="reservation-headline">Good news! {{ reservation.listing.creator.firstName }} has approved your request to stay</p>
+    </div>
+
+    <div class="listing-headline-container">
+        <p class="listing-headline">Please review your reservation and payment details below:</p>
+    </div>
+
+    <div class="receipt-details-container">
+        <p class="receipt-details">{{ get_friendly_date(reservation.updatedAt) }}</p>
+        <p class="receipt-details">Reservation #: {{ reservation.objectId }}</p>
+    </div>
+
+    <div class="listing-headline-container">
+        <p class="listing-headline">{{ reservation.listing.headline }}</p>
+    </div>
+
+    <div class="listing-photo-container">
+        <a href="{{ url_for('get_rental', listing_id=reservation.listing.objectId, _external=True) }}">
+            <img class="listing-photo" src="{{ reservation.listing.photos[0].large }}"></img>
+        </a>
+    </div>
+    <div class="dates-container">
+        <table style="margin: 0 auto;">
+          <tr>
+            <td><div class="dates-item-container">
+                <p class="dates-header">Check In</p>
+                <p class="dates-value">{{ get_friendly_date(reservation.arrivalDate, true) }}</p>
+            </div></td>
+            <td><div class="dates-item-container">
+                <p class="dates-header">Check Out</p>
+                <p class="dates-value">{{ get_friendly_date(reservation.departureDate, true) }}</p>
+            </div></td>
+          </tr>
+        </table>
+    </div>
+
+    <div class="pricing-container">
+        <table style="margin: 0 auto;">
+          <tr>
+            <td><div class="price-keys-container">
+                {% if config['USE_DYNAMIC_PRICING'] %}
+                <p class="price-keys">{{ reservation.numNights}} nights:</p>
+                {% else %}
+                <p class="price-keys">{{ reservation.rentalFee }} x {{ reservation.numNights}} nights:</p>
+                {% endif %}
+                {% if reservation.cleaningFee > 0 %}
+                <p class="price-keys">Cleaning Fee:</p>
+                {% endif %}
+                {% if reservation.securityDeposit > 0 %}
+                <p class="price-keys">Security Deposit:</p>
+                {% endif %}
+                <p id="total-key" class="price-keys">Total:</p>
+            </div></td>
+            <td><div class="price-values-container">
+                <p class="price-values">${{ reservation.numNights * reservation.rentalFee }}</p>
+                {% if reservation.cleaningFee > 0 %}
+                <p class="price-values">${{ reservation.cleaningFee }}</p>
+                {% endif %}
+                {% if reservation.securityDeposit > 0 %}
+                <p class="price-values">${{ reservation.securityDeposit }}</p>
+                {% endif %}
+                <p id="total-value" class="price-values">${{ reservation.total }}</p>
+            </div></td>
+          </tr>
+        </table>
+    </div>
+
+    <div class="payment-container">
+        <p class="payment-info">We have charged ${{ reservation.total }} to your credit card ending with xxxx</p>
+    </div>
+
+
+
+
+    <p style="margin-top:20px;text-align:center;">
+        If you have any questions or problems, please contact us: <a href="mailto:support@voyajoy.com"
+                                                                     style="text-decoration:none;color:#blue"
+                                                                     target="_blank">support@voyajoy.com</a>
+    </p>
+    <p style="text-align:center;color:#bcb5b9;font-weight:300;margin:30px auto">
+        Voyajoy Team
+    </p>
+</div>
+</body>
+</html>

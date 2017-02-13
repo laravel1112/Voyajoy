@@ -1,0 +1,150 @@
+#left-column-cost-overview {
+    text-align: right;
+    margin-right: 1em;
+}
+
+#right-column-cost-overview {
+    text-align: left;
+}
+
+.super-header,
+p, h1, #booking-request-title {
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.super-header {
+    font-size: 2em;
+    text-align: center;
+}
+
+.cost-overview-container {
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+}
+
+#left-column-cost-overview p,
+#right-column-cost-overview p {
+    margin-bottom: 0.2em;
+    color: black;
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+#note-fine {
+    font-size: 1em;
+}
+
+#note-fine-container {
+    text-align: center;
+}
+
+
+
+.dates-container {
+    background-color: #eaeaea;
+    margin: 2em 2em;
+    padding: 1em;
+}
+
+.dates-header {
+    font-size: 1em;
+}
+
+.dates-value {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.dates-item-container p {
+    color: black;
+    text-align: center;
+    margin: 0 1em;
+}
+
+.booking-dates-container {
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+    background-color: #eaeaea;
+}
+
+.booking-dates-element {
+    text-align: center;
+}
+
+.booking-dates-element p {
+    font-size: 1em;
+    margin-bottom: 0.2em;
+    font-weight: 300;
+    color: black;
+}
+
+.booking-dates-element p:nth-child(2) {
+    font-size: 1.2em;
+    font-family: "proxima-nova-bold";
+    margin-bottom: 0.2em;
+    color: black;
+}
+
+#checkout-button {
+    border-radius: 300px;
+    background-color: #4cb448;
+    margin: 1em 0em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 1em 1.2em;
+    color: white;
+    font-size: 0.9em;
+    border: none;
+}
+
+#payment-form {
+    text-align: center;
+    margin: 2em 1em;
+}
+
+.payment-btn {
+    padding: 1em;
+    background-color: #f1f1f1;
+    display: inline-block;
+}
+
+.btn-icon {
+    width: 80px;
+    height: auto;
+}
+
+#payment-selection-container {
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+}
+
+#payment-selection-container p {
+    margin: 2em;
+}
+
+#payment-selection-container a {
+    cursor: pointer;
+}
+
+#booking-request-headline {
+    font-family: "proxima-nova";
+    font-size: 1.5em;
+}
+
+#error-message {
+    color: red;
+    text-align: center;
+    font-size: 0.9em;
+    margin: 1em 0;
+}
+
+#spinner {
+    position: relative;
+    /*padding: 0.7em 0;*/
+    margin: 0.5em;
+}

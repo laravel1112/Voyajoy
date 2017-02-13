@@ -1,0 +1,181 @@
+{% extends 'no_banner_base.html' %}
+{% block headers_scripts_after_sqs %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="//www.parsecdn.com/js/parse-1.2.2.min.js"></script>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='ribbon.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='stars.css') }}">
+<script src="{{ url_for('static', filename='js/stars.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+<div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1453243512088"
+     id="page-569d5c7c5a5668a5945745a4">
+    <div class="row sqs-row">
+        <div class="col sqs-col-12 span-12">
+            <div class="sqs-block code-block sqs-block-code" data-block-type="23"
+                 id="block-yui_3_17_2_3_1453240859384_11159">
+                <div class="sqs-block-content">
+                    <div id="nameYourOwnDiv">
+                    </div>
+                </div>
+            </div>
+            <div class="sqs-block html-block sqs-block-html" data-block-type="2"
+                 id="block-yui_3_17_2_12_1453158231643_10111">
+                <div class="sqs-block-content"><h1 class="featured-homes text-align-center"><strong>{{ city }}, {{ state
+                    }}
+                </strong></h1>
+
+                    {% if listings|length > 0 %}
+                    <div class="row sqs-row">
+                        <div class="col sqs-col-6 span-6">
+                            <div class="sqs-block image-block sqs-block-image" data-block-type="5"
+                                 id="block-yui_3_17_2_3_1453153341560_28590">
+                                <div class="sqs-block-content">
+
+                                    {% if listings|length > 0 %}
+                                    {% for n in range(0,listings|length) %}
+                                    {% if n % 2 == 0 %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row sqs-row">
+                        <div class="col sqs-col-6 span-6">
+                            <div class="sqs-block image-block sqs-block-image" data-block-type="5"
+                                 id="block-yui_3_17_2_9_1453688675394_17616">
+                                <div class="sqs-block-content">
+                                    <div class="image-block-outer-wrapper layout-caption-overlay-hover ">
+
+                                        <div class="intrinsic" style="max-width:1134.0px;">
+
+                                            <a href="/rentals/{{ listings[n].objectId }}">
+                                                <div style="padding-bottom:66.31393432617188%;"
+                                                     class="image-block-wrapper   has-aspect-ratio"
+                                                     data-description="&lt;p&gt;world&lt;/p&gt;">
+                                                    <noscript><img
+                                                            src="{{ listings[n].photos[0].large }}"/>
+                                                    </noscript>
+                                                    <img class="thumb-image"
+                                                         data-src="{{ listings[n].photos[0].large }}"
+                                                         data-image="{{ listings[n].photos[0].large }}"
+                                                         data-image-dimensions="1134x752"
+                                                         data-image-focal-point="0.5,0.5" data-load="false"
+                                                         data-image-id="56a5a9bb8b38d48e2c1e7877"
+                                                         data-type="image"/>
+                                                    {% if listings[n].discountedRate != 0 %}
+                                                    <div class="discount-flag"><span>{{ listings[n].discountedRate }}&#37; Off</span>
+                                                    </div>
+                                                    <div class="price-flag"><span><strike> ${{
+                                                        listings[n].accomodationFee }} </strike>  ${{ (listings[n].accomodationFee * (1 - (listings[n].discountedRate / 100)))|int }}</span>
+                                                    </div>
+                                                    {% else %}
+                                                    <div class="price-flag"><span>${{
+                                                                    listings[n].accomodationFee|int }}</span>
+                                                    </div>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="featured-listing-details">
+                                                    <p>{{ listings[n].headline }}</p>
+                                                    <p>{{ listings[n].bedrooms }}BD/{{
+                                                        listings[n].bathrooms }}BA - {{
+                                                        listings[n].housingType }}</p>
+                                                    <div class="star-ratings">
+                                                        <span class="stars">{{ listings[n].reviewRating }}</span>
+                                                        <p class="num-star-ratings">({{
+                                                            listings[n].reviewCount }})</p>
+                                                    </div>
+                                                    <p>{{ listings[n].placeDetails.city }}, {{
+                                                        listings[n].placeDetails.state }}</p>
+                                                </div>
+                                            </a>
+
+
+                                        </div>
+
+                                    </div>
+
+                                    {% else %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col sqs-col-6 span-6">
+                            <div class="sqs-block image-block sqs-block-image" data-block-type="5"
+                                 id="block-yui_3_17_2_9_1453688675394_15840">
+                                <div class="sqs-block-content">
+                                    <div class="image-block-outer-wrapper layout-caption-hidden ">
+
+                                        <div class="intrinsic" style="max-width:1134.0px;">
+
+                                            <a href="/rentals/{{ listings[n].objectId }}">
+
+                                                <div style="padding-bottom:66.31393432617188%;"
+                                                     class="image-block-wrapper has-aspect-ratio"
+                                                     data-description="&lt;p&gt;world&lt;/p&gt;">
+                                                    <noscript><img
+                                                            src="{{ listings[n].photos[0].large }}"/>
+                                                    </noscript>
+                                                    <img class="thumb-image"
+                                                         data-src="{{ listings[n].photos[0].large }}"
+                                                         data-image="{{ listings[n].photos[0].large }}"
+                                                         data-image-dimensions="1134x752"
+                                                         data-image-focal-point="0.5,0.5" data-load="false"
+                                                         data-image-id="56a5a9bb8b38d48e2c1e7877"
+                                                         data-type="image"/>
+                                                    {% if listings[n].discountedRate != 0 %}
+                                                    <div class="discount-flag"><span>{{ listings[n].discountedRate }}&#37; Off</span>
+                                                    </div>
+                                                    <div class="price-flag"><span><strike> ${{
+                                                        listings[n].accomodationFee }} </strike>  ${{ (listings[n].accomodationFee * (1 - (listings[n].discountedRate / 100)))|int }}</span>
+                                                    </div>
+                                                    {% else %}
+                                                    <div class="price-flag"><span>${{
+                                                                    listings[n].accomodationFee|int }}</span>
+                                                    </div>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="featured-listing-details">
+                                                    <p>{{ listings[n].headline }}</p>
+                                                    <p>{{ listings[n].bedrooms }}BD/{{
+                                                        listings[n].bathrooms }}BA - {{
+                                                        listings[n].housingType }}</p>
+                                                    <div class="star-ratings">
+                                                        <span class="stars">{{ listings[n].reviewRating }}</span>
+                                                        <p class="num-star-ratings">({{
+                                                            listings[n].reviewCount }})</p>
+                                                    </div>
+                                                    <p>{{ listings[n].placeDetails.city }}, {{
+                                                        listings[n].placeDetails.state }}</p>
+                                                </div>
+                                            </a>
+
+
+                                        </div>
+
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <p id="main-text" style="text-align: center; font-size: 1.5em;"><strong>No listings available in this area yet. We will be getting some soon. Thanks!</strong></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block body_scripts_end %}
+
+<script type="text/javascript">$(function () {
+    $('span.stars').stars();
+});
+</script>
+
+{% endblock %}

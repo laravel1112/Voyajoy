@@ -1,0 +1,53 @@
+{% extends 'base_banner.html' %}
+
+{% block promoted_photo %}
+<div id="promotedGalleryWrapper" class="sqs-layout promoted-gallery-wrapper">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+
+<div class="banner-thumbnail-wrapper has-description" data-content-field="main-image"
+     data-collection-id="569d5c7c5a5668a5945745a4" data-edit-main-image="Banner"
+     data-annotation-alignment="bottom left">
+
+    <div class="color-overlay"></div>
+    <figure id="thumbnail" class="loading content-fill"><img
+            data-src="{{ url_for('static', filename='image/{}.jpg'.format('instagram_bg')) }}"
+            data-image="http://static1.squarespace.com/static/569ab3d3d8af100e8507d8d7/t/569d5c7c5a5668a5945745a1/1453079921164/bedroom.jpg"
+            data-image-dimensions="1134x749" data-image-focal-point="0.5,0.5" alt="bedroom.jpg"/></figure>
+
+    <div class="desc-wrapper" data-collection-id="569d5c7c5a5668a5945745a4"><p><strong>Work that makes you feel creative.</strong></p>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<!--<div class="careerspage-perks perks" id="_perks">-->
+	<!--<h2 class="website light center_text padding_top_1050">-->
+		<!--Revolutionizing Travel.-->
+	<!--</h2>-->
+	<!--<div class="row padding_bottom_80 width_50 center_element font_size_140_percent line_height_150_percent font_color_white padding_left_30">-->
+			<!--We are on a mission to help vacation rental owners build their businesses.-->
+			<!--By developing amazing technology, Voyajoy connects vacation rental owners with travelers, helping to-->
+			<!--create unique travel experiences around the world.-->
+	<!--</div>-->
+<!--</div>&lt;!&ndash;end careerspage-perks&ndash;&gt;-->
+
+<div class="careerspage-positions jobs width_50 center_element" id="_jobs" style="font-family: proxmia-nova;">
+	<h2 class="website light">Jobs</h2>
+	<p class="text_align_left margin_top_420">
+		We are committed to eliminating discrimination and encouraging diversity amongst our workforce.
+		Our aim is that each employee feels respected and able to give their best.<br class="clear" /><br class="clear" />
+
+		It is Voyajoy's policy not to discriminate against its workers on the basis of age, disability, gender reassignment,
+		marital or civil partner status, pregnancy or maternity, race, colour, nationality, ethnic or national origin,
+		religion or belief, sex or sexual orientation (together “protected characteristics”).
+	</p>
+</div><!--end careerspage-positions jobs -->
+{% endblock %}
+
+{% block prefooter %}
+{% endblock %}

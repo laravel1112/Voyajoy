@@ -1,0 +1,18 @@
+<div class="dates-container">
+    <table style="margin: 0 auto;">
+        <tr>
+            <td>
+                <div class="dates-item-container">
+                    <p class="dates-header">Check In</p>
+                    <p class="dates-value">{{ get_friendly_date(reservation.arrivalDate, true) }}</p>
+                </div>
+            </td>
+            <td>
+                <div class="dates-item-container">
+                    <p class="dates-header">Check Out</p>
+                    <p class="dates-value">{{ get_friendly_date(reservation.departureDate, true) }}</p>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,53 @@
+<div class="image-block-outer-wrapper layout-caption-overlay-hover ">
+
+    <div class="intrinsic" style="max-width:1134.0px;">
+
+        <a href="/rentals/{{ listings[n].objectId }}">
+            <div style="padding-bottom:66.31393432617188%;"
+                 class="image-block-wrapper   has-aspect-ratio"
+                 data-description="&lt;p&gt;world&lt;/p&gt;">
+                <noscript><img
+                        src="{{ listings[n].photos[0].large }}"/>
+                </noscript>
+                <img class="thumb-image"
+                     data-src="{{ listings[n].photos[0].large }}"
+                     data-image="{{ listings[n].photos[0].large }}"
+                     data-image-dimensions="1134x752"
+                     data-image-focal-point="0.5,0.5" data-load="false"
+                     data-image-id="56a5a9bb8b38d48e2c1e7877"
+                     data-type="image"/>
+                {% if listings[n].discountedRate != 0 %}
+                <div class="discount-flag"><span>{{ listings[n].discountedRate }}&#37; Off</span>
+                </div>
+                {% else %}
+                {% endif %}
+            </div>
+            <div class="featured-listing-details">
+                <p>{{ listings[n].headline }}</p>
+                <p>{{ listings[n].bedrooms }}BD/{{
+                    listings[n].bathrooms }}BA - {{
+                    listings[n].housingType }}</p>
+                {% if listings[n].reviewRating > 0 %}
+                <div class="star-ratings">
+                    <span class="stars">{{ listings[n].reviewRating }}</span>
+                    <p class="num-star-ratings">({{
+                        listings[n].reviewCount }})</p>
+                </div>
+                {% else %}
+                <div class="star-ratings" style="display: none">
+                    <span class="stars">{{ listings[n].reviewRating }}</span>
+                    <p class="num-star-ratings">({{
+                        listings[n].reviewCount }})</p>
+                </div>
+                {% endif %}
+                {% if listings[n].placeDetails.city and listings[n].placeDetails.state %}
+                <p>{{ listings[n].placeDetails.city }}, {{
+                    listings[n].placeDetails.state }}</p>
+                {% endif %}
+            </div>
+        </a>
+
+
+    </div>
+
+</div>

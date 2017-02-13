@@ -1,0 +1,14 @@
+{% extends 'no_banner_base.html' %}
+{% block content %}
+<div id="login-module">
+    <p id="main-text" style="text-align: center; font-size: 1.5em;"><strong>Thank you, we have successfully verified
+        your account!</strong> Click
+        {% if next %}
+        <a style="color:#4cb448;" href="{{ next }}">here</a> to continue.</p>
+    {% else %}
+        <a style="color:#4cb448;" href="{{ url_for('dashboard') }}">here</a> to continue.</p>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block prefooter %}{% endblock %}

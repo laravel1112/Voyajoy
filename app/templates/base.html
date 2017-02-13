@@ -1,0 +1,828 @@
+<!doctype html>
+<html xmlns:og="http://opengraphprotocol.org/schema/" lang="en-US" itemscope itemtype="http://schema.org/WebPage"
+      class="touch-styles">
+<head>
+    {% block head %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- This is Squarespace. -->
+    <base href="">
+    <meta charset="utf-8"/>
+    <title>{% block title %}Voyajoy{% endblock %}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='image/favicon.ico') }}"/>
+    <link rel="canonical" href="http://www.booking.voyajoy.com/"/>
+    <meta property="og:site_name" content="Voyajoy"/>
+    <meta property="og:title" content="Home"/>
+    <meta property="og:url" content="http://www.booking.voyajoy.com/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="Amazing deals at great vacation homes from tonight to two weeks out
+
+Book now"/>
+    <meta property="og:image"
+          content="http://static1.squarespace.com/static/569ab3d3d8af100e8507d8d7/t/569c5a7442f55250d91d4f6d/1453526498103/?format=1000w"/>
+    <meta itemprop="name" content="{{ meta_name }}"/>
+    <meta itemprop="url" content="http://www.booking.voyajoy.com/"/>
+    <meta itemprop="description" content="Amazing deals at great vacation homes from tonight to two weeks out
+
+Book now"/>
+    <meta itemprop="thumbnailUrl"
+          content="http://static1.squarespace.com/static/569ab3d3d8af100e8507d8d7/t/569c5a7442f55250d91d4f6d/1453526498103/?format=1000w"/>
+    <link rel="image_src"
+          href="http://static1.squarespace.com/static/569ab3d3d8af100e8507d8d7/t/569c5a7442f55250d91d4f6d/1453526498103/?format=1000w"/>
+    <meta itemprop="image"
+          content="http://static1.squarespace.com/static/569ab3d3d8af100e8507d8d7/t/569c5a7442f55250d91d4f6d/1453526498103/?format=1000w"/>
+    <meta name="twitter:title" content="Home"/>
+    <meta name="twitter:image"
+          content="http://static1.squarespace.com/static/569ab3d3d8af100e8507d8d7/t/569c5a7442f55250d91d4f6d/1453526498103/?format=1000w"/>
+    <meta name="twitter:url" content="http://www.booking.voyajoy.com/"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content="Amazing deals at great vacation homes from tonight to two weeks out
+
+Book now"/>
+    <meta name="description" content="Amazing deals at great vacation homes from tonight to two weeks out
+
+Book now"/>
+
+    <meta name="p:domain_verify" content="66e6abddf98d4bcd0eb8b547d6e11e0a"/>
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='fonts.css') }}" />
+    {% block headers_scripts_before_sqs %}{% endblock %}
+    <script type="text/javascript">SQUARESPACE_ROLLUPS = {};</script>
+    <script>
+        (function (rollups, name) {
+            if (!rollups[name]) {
+                rollups[name] = {};
+            }
+            rollups[name].js = ["//static.squarespace.com/universal/scripts-compressed/common-3d45ef85ea114c1dca17-min.js"];
+        })(SQUARESPACE_ROLLUPS, 'squarespace-common');
+
+    </script>
+    <script>
+        (function (rollups, name) {
+            if (!rollups[name]) {
+                rollups[name] = {};
+            }
+            rollups[name].js = ["//static.squarespace.com/universal/scripts-compressed/commerce-33f28796fb6ebfd81ba1-min.js"];
+        })(SQUARESPACE_ROLLUPS, 'squarespace-commerce');
+
+    </script>
+    <script>
+        (function (rollups, name) {
+            if (!rollups[name]) {
+                rollups[name] = {};
+            }
+            rollups[name].css = ["//static.squarespace.com/universal/styles-compressed/commerce-2b4a0593bca72ff9bd48bd03804b62b2-min.css"];
+        })(SQUARESPACE_ROLLUPS, 'squarespace-commerce');
+
+    </script>
+    <script type="text/javascript" data-sqs-type="dynamic-assets-loader">(function () {
+        (function (a) {
+            function d(a) {
+                -1 !== a.indexOf(".js") ? document.write("<script " + e + 'type="text/javascript" src="' + a + '">\x3c/script>') : document.write('<link rel="stylesheet" type="text/css" href="' + a + '" />')
+            }
+
+            var e;
+            e = window.__beta_flag_should_defer ? 'defer="defer" ' : "";
+            try {
+                if (window.top != window && window.top.Squarespace && window.top.Squarespace.frameAvailable) {
+                    window.top.Squarespace.frameAvailable(window, SQUARESPACE_ROLLUPS);
+                    return
+                }
+            } catch (f) {
+                console.error(f)
+            }
+            for (var c in a) {
+                if (a[c].js)for (var b = 0; b < a[c].js.length; b++)d(a[c].js[b]);
+                if (a[c].css)for (b = 0; b < a[c].css.length; b++)d(a[c].css[b])
+            }
+        })(SQUARESPACE_ROLLUPS);
+    })();
+
+    </script>
+    <script type="text/javascript" data-sqs-type="imageloader">(function () {
+        var SQUARESPACE_SIZES = [2500, 1500, 1E3, 750, 500, 300, 100], IMAGE_LOADING_CLASS = "loading", ImageLoader = new function () {
+            this.load = function (a, b) {
+                function c(a, b, d) {
+                    var c = new Image;
+                    c.onload = b;
+                    c.onerror = d;
+                    c.src = a
+                }
+
+                a.getDOMNode && (a = a.getDOMNode());
+                var d = this._getDataFromNode(a, b), e = !(!d.dimensions || !d.dimensions.width || !d.dimensions.height), g = d.load + "";
+                if ("false" === g)return !1;
+                var h = d.mode;
+                if (e && ("fit" == h || "fill" == h)) {
+                    h = a.parentNode;
+                    if (!h)return console.error("Not doing anything, parentNode not found."), !1;
+                    if (!this.refresh(a,
+                                    b, h))return !1
+                }
+                var n = this._intendToLoad(a, d);
+                if ("string" == typeof n && "viewport" !== g) {
+                    var m = this.getUrl(n, d), g = a.getAttribute("data-image-resolution");
+                    a.getAttribute("src") !== m && this.isValidResolution(n, g) && (a.onload = function () {
+                        a.className = a.className.replace(IMAGE_LOADING_CLASS, " ").trim();
+                        a.setAttribute("data-image-resolution", n)
+                    }, !a.getAttribute("src") && -1 === a.className.indexOf(IMAGE_LOADING_CLASS) && (a.className += (a.className ? " " : "") + IMAGE_LOADING_CLASS), !a.getAttribute("src") && e ? (a.setAttribute("src",
+                            m), d.useBgImage && (a.parentNode.style.backgroundImage = "url(" + m + ")")) : c(m, function () {
+                        e ? a.setAttribute("src", m) : (a.setAttribute("data-image-dimensions", this.width + "x" + this.height), ImageLoader.load(a, b))
+                    }, function () {
+                        a.className = a.className.replace(IMAGE_LOADING_CLASS, " ").trim();
+                        a.setAttribute("src", m)
+                    }));
+                    return !0
+                }
+                return n
+            };
+            this.refresh = function (a, b, c) {
+                a.getDOMNode && (a = a.getDOMNode());
+                c && c.getDOMNode && (c = c.getDOMNode());
+                c = c || a.parentNode;
+                if (!c)return console.error("Not doing anything, parentNode not found."),
+                        !1;
+                var d = this._getDataFromNode(a, b), e = c.offsetWidth, g = c.offsetHeight;
+                b = d.mode;
+                if ("none" != b) {
+                    var h = d.dimensions.width, n = d.dimensions.height, m = h / n, q = e / g;
+                    if (d.useBgImage && "fill" === b && "backgroundSize" in document.documentElement.style)return a.style.display = "none", c.style.backgroundSize = "cover", c.style.backgroundPosition = 100 * d.focalPoint.x + "% " + 100 * d.focalPoint.y + "%", !0;
+                    if (d.fixedRatio)"fill" == b && q > m || "fit" == b && q < m ? (k = 100, l = 100 * (q / m), r = (100 - l) * d.focalPoint.y, p = 0) : (k = 100 * (m / q), l = 100, r = 0, p = (100 - k) * d.focalPoint.x),
+                            a.style.top = r + "%", a.style.left = p + "%", a.style.width = k + "%", a.style.height = l + "%"; else {
+                        var f;
+                        "fill" === b ? f = m > q ? g / n : e / h : "fit" === b && (f = m < q ? g / n : e / h);
+                        !d.stretch && "fit" == b && 1 < f && (f = 1);
+                        var k = Math.ceil(h * f), l = Math.ceil(n * f);
+                        if (0 === k || 0 === l)return !1;
+                        var p, r;
+                        "fill" === b ? (p = Math.min(Math.max(e / 2 - k * d.focalPoint.x, e - k), 0), r = Math.min(Math.max(g / 2 - l * d.focalPoint.y, g - l), 0)) : "fit" === b && (f = d.fitAlignment, p = f.left ? 0 : f.right ? e - k : k < e ? (e - k) / 2 : 0, r = f.top ? 0 : f.bottom ? g - l : l < g ? (g - l) / 2 : 0, "inline" == this._getStyle(a, "display") && (a.style.fontSize =
+                                "0px"), this._resetAlt(a, function () {
+                            k -= a.offsetHeight - a.clientHeight;
+                            l -= a.offsetWidth - a.clientWidth
+                        }));
+                        a.style.top = Math.ceil(r) + "px";
+                        a.style.left = Math.ceil(p) + "px";
+                        a.style.width = Math.ceil(k) + "px";
+                        a.style.height = Math.ceil(l) + "px"
+                    }
+                    p = this._getStyle(c, "position");
+                    a.style.position = "relative" == p ? "absolute" : "relative";
+                    if ("fill" == b && (b = this._getStyle(c, "overflow"), !b || "hidden" != b))c.style.overflow = "hidden";
+                    return !0
+                }
+            };
+            this._intendToLoad = function (a, b) {
+                function c(c, d) {
+                    "none" === b.mode && (a.style.width = null, a.style.height =
+                            null);
+                    var e = parseFloat(a.getAttribute(c)), f = parseFloat(e);
+                    if (!f || isNaN(f))e = h._getStyle(a, c), f = parseFloat(e);
+                    if (!f || isNaN(f))e = h._getStyle(a, "max-" + c, "max" + (c.substr(0, 1).toUpperCase() + c.substr(1))), f = parseFloat(e);
+                    if (0 === d || e)switch (h._stringType(e)) {
+                        case "percentage":
+                            d = parseInt(e, 10) / 100 * g["offset" + c.substr(0, 1).toUpperCase() + c.substr(1)];
+                            break;
+                        case "number":
+                            d = parseInt(e, 10)
+                    }
+                    !f && 0 !== d && !a.getAttribute("src") && (d = 0);
+                    return d
+                }
+
+                b = b || this._getDataFromNode(a);
+                if (!b.source)return !1;
+                var d = a.offsetWidth,
+                        e = a.offsetHeight, g = a.parentNode, h = this;
+                this._resetAlt(a, function () {
+                    d = c("width", d);
+                    e = c("height", e)
+                });
+                0 === d && 0 === e ? (d = b.dimensions.width, e = b.dimensions.height) : 0 === d ? d = this.getDimensionForValue("width", e, b) : 0 === e && (e = this.getDimensionForValue("height", d, b));
+                "viewport" === b.load && (a.style.width = Math.floor(d) + "px", a.style.height = Math.floor(e) + "px");
+                return this.getSquarespaceSize(d, e, b)
+            };
+            this._getDataFromNode = function (a, b) {
+                b = b || {};
+                var c = {
+                    focalPoint: {x: 0.5, y: 0.5}, dimensions: {width: null, height: null}, mode: "none",
+                    fitAlignment: {center: !0}, load: "true", stretch: !0, fixedRatio: !1
+                };
+                if (b.focalPoint)c.focalPoint = b.focalPoint; else {
+                    var d = a.getAttribute("data-image-focal-point");
+                    if (d && (d = d.split(",")) && 2 == d.length)c.focalPoint = {
+                        x: parseFloat(d[0]),
+                        y: parseFloat(d[1])
+                    }
+                }
+                if (b.dimensions)c.dimensions = b.dimensions; else if ((d = a.getAttribute("data-image-dimensions")) && (d = d.split("x")) && 2 == d.length)c.dimensions = {
+                    width: parseInt(d[0], 10),
+                    height: parseInt(d[1], 10)
+                };
+                b.mode ? c.mode = b.mode : a.parentNode && (d = a.parentNode.className, -1 !==
+                d.indexOf("content-fill") ? c.mode = "fill" : -1 !== d.indexOf("content-fit") && (c.mode = "fit"));
+                if ("fit" === c.mode && a.parentNode && (d = b.fitAlignment || a.getAttribute("data-alignment") || a.parentNode.getAttribute("data-alignment")))c.fitAlignment = {
+                    top: -1 !== d.indexOf("top"),
+                    left: -1 !== d.indexOf("left"),
+                    center: -1 !== d.indexOf("center"),
+                    right: -1 !== d.indexOf("right"),
+                    bottom: -1 !== d.indexOf("bottom")
+                };
+                if (b.load)c.load = b.load; else if (d = a.getAttribute("data-load"))c.load = d;
+                if ("undefined" !== typeof b.stretch)c.stretch = b.stretch;
+                else if (d = a.getAttribute("data-image-stretch"))c.stretch = "true" === d ? !0 : !1;
+                c.source = b.source ? b.source : a.getAttribute("data-src");
+                if (c.source && (-1 !== c.source.indexOf("squarespace.com") || -1 !== c.source.indexOf("squarespace.net")) && "http:" === c.source.substr(0, 5) && "https" === window.location.protocol.substr(0, 5))c.source = c.source.replace("http://", "https://");
+                if (b.fixedRatio)c.fixedRatio = b.fixedRatio; else if (d = a.getAttribute("data-fixed-ratio"))c.fixedRatio = "true" == d;
+                b.useBgImage ? c.useBgImage = b.useBgImage :
+                        (d = a.getAttribute("data-use-bg-image"), c.useBgImage = "true" === d || !0 === d ? !0 : !1);
+                return c
+            };
+            this._stringType = function (a) {
+                return "string" === typeof a && -1 !== a.indexOf("%") ? "percentage" : isNaN(parseInt(a, 10)) ? NaN : "number"
+            };
+            this._getStyle = function (a, b, c) {
+                var d;
+                a.currentStyle ? d = a.currentStyle[c || b] : window.getComputedStyle && (d = document.defaultView.getComputedStyle(a, null).getPropertyValue(b));
+                return d
+            };
+            this._isVisible = function (a) {
+                a = a.getBoundingClientRect();
+                return 0 <= a.left && 0 <= a.top || 0 <= a.bottom && 0 <= a.right ||
+                        0 <= a.left && 0 <= a.bottom || 0 <= a.right && 0 <= a.top
+            };
+            this.getSquarespaceSize = function (a, b, c) {
+                a = Math.max(b / (c.dimensions.height / c.dimensions.width), a);
+                "undefined" === typeof app && "number" === typeof window.devicePixelRatio && (a *= window.devicePixelRatio);
+                for (b = 1; b < SQUARESPACE_SIZES.length && !(a > SQUARESPACE_SIZES[b]); b++);
+                return SQUARESPACE_SIZES[b - 1] + "w"
+            };
+            this.getDimensionForValue = function (a, b, c) {
+                var d = c.dimensions.width;
+                c = c.dimensions.height;
+                return "width" == a ? d / c * b : "height" == a ? c / d * b : NaN
+            };
+            this.getUrl = function (a,
+                                    b) {
+                var c = b.source;
+                return a && ("/" == c[0] || -1 != c.indexOf("squarespace.com") || -1 != c.indexOf("squarespace.net")) ? (-1 === c.indexOf("format=" + a) && (c = c + (-1 !== c.indexOf("?") ? "&" : "?") + "format=" + a), c) : b.source
+            };
+            this.isValidResolution = function (a, b) {
+                a = parseInt(a, 10);
+                b = parseInt(b, 10);
+                return isNaN(a) || isNaN(b) ? !0 : a > b
+            };
+            this._resetAlt = function (a, b) {
+                var c = a.getAttribute("alt"), d = c && 0 < c.length && !a.getAttribute("src");
+                if (d) {
+                    var e = a.style.display;
+                    a.removeAttribute("alt");
+                    a.style.display = "none";
+                    a.offsetHeight + 0;
+                    a.style.display =
+                            e
+                }
+                b.call(this);
+                d && a.setAttribute("alt", c)
+            };
+            this.bootstrap = function () {
+                var a = document.images;
+                if (0 < a.length)for (var b = 0, c = a.length; b < c; b++)((a[b].hasAttribute ? a[b].hasAttribute("data-image") : a[b].attributes["data-image"]) || (a[b].hasAttribute ? a[b].hasAttribute("data-src") : a[b].attributes["data-src"])) && "false" !== (a[b].getAttribute ? a[b].getAttribute("data-load") : a[b].attributes["data-load"]) + "" && ImageLoader.load(a[b])
+            }
+        };
+        window.ImageLoader = ImageLoader;
+        window.YUI && YUI.add("squarespace-imageloader", function (a) {
+        });
+    })();
+
+    </script>
+    <script>
+        Static.SQUARESPACE_CONTEXT = {
+            "facebookAppId": "314192535267336",
+            "rollups": {
+                "squarespace-audio-player": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/audio-player-76e4bfcc3f9830beb388bae2002fbe6c-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/audio-player-9220e7802026f06d7f96-min.js"
+                },
+                "squarespace-blog-collection-list": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/blog-collection-list-d41d8cd98f00b204e9800998ecf8427e-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/blog-collection-list-d23fc6f7df5af6792511-min.js"
+                },
+                "squarespace-calendar-block-renderer": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/calendar-block-renderer-0081bda8bafd2e574bfc05218b33687d-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/calendar-block-renderer-bfe1c959efed8d5b70da-min.js"
+                },
+                "squarespace-chartjs-helpers": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/chartjs-helpers-9935a41d63cf08ca108505d288c1712e-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/chartjs-helpers-c218c09c1db16db76d6a-min.js"
+                },
+                "squarespace-comments": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/comments-56d2708d36aa119f08d126978a305f0f-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/comments-d41c8c094911be55c747-min.js"
+                },
+                "squarespace-dialog": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/dialog-be200ed7f5c57483743a18984283b649-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/dialog-6c28d55100723174f142-min.js"
+                },
+                "squarespace-events-collection": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/events-collection-0081bda8bafd2e574bfc05218b33687d-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/events-collection-f6412b34be0a71834131-min.js"
+                },
+                "squarespace-image-zoom": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/image-zoom-ae974921915aeccaff8ad60c60e19c31-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/image-zoom-e765525daf7e8e5a1434-min.js"
+                },
+                "squarespace-pinterest": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/pinterest-d41d8cd98f00b204e9800998ecf8427e-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/pinterest-cdaa7d1d5fed09c59fc1-min.js"
+                },
+                "squarespace-product-quick-view": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/product-quick-view-bb658543b4283f335502f712d3cf5696-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/product-quick-view-caf38292b81b9d335268-min.js"
+                },
+                "squarespace-products-collection-item-v2": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/products-collection-item-v2-ae974921915aeccaff8ad60c60e19c31-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/products-collection-item-v2-913a2c2dab40d3688a9a-min.js"
+                },
+                "squarespace-products-collection-list-v2": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/products-collection-list-v2-ae974921915aeccaff8ad60c60e19c31-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/products-collection-list-v2-a26ab96702a71c8c1c9d-min.js"
+                },
+                "squarespace-search-page": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/search-page-feb7768f9a9907b47ac689b118f3db8e-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/search-page-522363ddaa5f5400afef-min.js"
+                },
+                "squarespace-share-buttons": {"js": "//static.squarespace.com/universal/scripts-compressed/share-buttons-bfb38c6d1302729302a7-min.js"},
+                "squarespace-simple-liking": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/simple-liking-09fa291ec2800c97714f0d157fd0a6ca-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/simple-liking-317cb6b4857479fcbf31-min.js"
+                },
+                "squarespace-social-buttons": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/social-buttons-578fb344ac92d6ab44d6030c1b952622-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/social-buttons-fb07189a05d12571a444-min.js"
+                },
+                "squarespace-tourdates": {
+                    "css": "//static.squarespace.com/universal/styles-compressed/tourdates-b5e2052fe27121e052bbe8ad40ba5c3e-min.css",
+                    "js": "//static.squarespace.com/universal/scripts-compressed/tourdates-fc175bd5cd95cedc71e5-min.js"
+                }
+            },
+            "pageType": 2,
+            "website": {
+                "id": "569ab3d3d8af100e8507d8d7",
+                "identifier": "voyajoy",
+                "websiteType": 1,
+                "contentModifiedOn": 1453526498103,
+                "cloneable": false,
+                "developerMode": true,
+                "siteStatus": {},
+                "language": "en-US",
+                "timeZone": "America/Los_Angeles",
+                "machineTimeZoneOffset": -28800000,
+                "timeZoneOffset": -28800000,
+                "timeZoneAbbr": "PST",
+                "siteTitle": "Voyajoy",
+                "siteTagLine": "Book awesome discounted vacation homes tonight",
+                "siteDescription": "",
+                "logoImageId": "569c5a7442f55250d91d4f6d",
+                "shareButtonOptions": {
+                    "5": true,
+                    "1": true,
+                    "3": true,
+                    "7": true,
+                    "6": true,
+                    "4": true,
+                    "8": true,
+                    "2": true
+                },
+                "logoImageUrl": "//static1.squarespace.com/static/569ab3d3d8af100e8507d8d7/t/569c5a7442f55250d91d4f6d/1453526498103/",
+                "authenticUrl": "http://www.booking.voyajoy.com",
+                "baseUrl": "http://www.booking.voyajoy.com",
+                "primaryDomain": "www.booking.voyajoy.com",
+                "typekitId": "",
+                "statsMigrated": false,
+                "imageMetadataProcessingEnabled": false
+            },
+            "websiteSettings": {
+                "id": "569ab3d4d8af100e8507d8d9",
+                "websiteId": "569ab3d3d8af100e8507d8d7",
+                "type": "Personal",
+                "subjects": [],
+                "country": "US",
+                "state": "CA",
+                "simpleLikingEnabled": true,
+                "mobileInfoBarSettings": {
+                    "style": 2,
+                    "isContactEmailEnabled": false,
+                    "isContactPhoneNumberEnabled": false,
+                    "isLocationEnabled": false,
+                    "isBusinessHoursEnabled": false
+                },
+                "announcementBarSettings": {
+                    "style": 1,
+                    "text": "<p><em>Amazing deals at great vacation homes from tonight to two weeks out</em></p>"
+                },
+                "lastAgreedTermsOfService": 2,
+                "defaultPostFormat": "%y/%m/%d/%t",
+                "commentLikesAllowed": true,
+                "commentAnonAllowed": true,
+                "commentThreaded": true,
+                "commentApprovalRequired": false,
+                "commentAvatarsOn": true,
+                "commentSortType": 2,
+                "commentFlagThreshold": 0,
+                "commentFlagsAllowed": true,
+                "commentEnableByDefault": true,
+                "commentDisableAfterDaysDefault": 0,
+                "disqusShortname": "",
+                "homepageTitleFormat": "%s",
+                "collectionTitleFormat": "%c \u2014 %s",
+                "itemTitleFormat": "%i \u2014 %s",
+                "commentsEnabled": false,
+                "contactPhoneNumber": "",
+                "allowSquarespacePromotion": true,
+                "storeSettings": {
+                    "returnPolicy": null,
+                    "termsOfService": null,
+                    "privacyPolicy": null,
+                    "paymentSettings": {},
+                    "expressCheckout": false,
+                    "useLightCart": false,
+                    "showNoteField": false,
+                    "currenciesSupported": ["USD", "CAD", "GBP", "AUD", "EUR", "CHF", "NOK", "SEK", "DKK"],
+                    "defaultCurrency": "USD",
+                    "selectedCurrency": "USD",
+                    "measurementStandard": 1,
+                    "orderConfirmationInjectCode": "",
+                    "showCustomCheckoutForm": false,
+                    "enableMailingListOptInByDefault": true,
+                    "sameAsRetailLocation": false,
+                    "stripeConnected": false,
+                    "isLive": false,
+                    "storeState": 3
+                },
+                "useEscapeKeyToLogin": false,
+                "ssBadgeType": 1,
+                "ssBadgePosition": 4,
+                "ssBadgeVisibility": 1,
+                "ssBadgeDevices": 1,
+                "pinterestOverlayOptions": {"mode": "disabled"}
+            },
+            "websiteCloneable": false,
+            "collection": {"title": "Home", "id": "569d5c7c5a5668a5945745a4", "fullUrl": "/", "type": 10},
+            "subscribed": false,
+            "appDomain": "squarespace.com",
+            "secureDomain": "https://voyajoy.squarespace.com",
+            "templateTweakable": true,
+            "tweakJSON": {
+                "aspect-ratio": "Auto",
+                "banner-slideshow-controls": "Arrows",
+                "gallery-arrow-style": "No Background",
+                "gallery-aspect-ratio": "3:2 Standard",
+                "gallery-auto-crop": "true",
+                "gallery-autoplay": "false",
+                "gallery-design": "Grid",
+                "gallery-info-overlay": "Show on Hover",
+                "gallery-loop": "false",
+                "gallery-navigation": "Bullets",
+                "gallery-show-arrows": "true",
+                "gallery-transitions": "Fade",
+                "galleryArrowBackground": "rgba(34,34,34,1)",
+                "galleryArrowColor": "rgba(255,255,255,1)",
+                "galleryAutoplaySpeed": "3",
+                "galleryCircleColor": "rgba(255,255,255,1)",
+                "galleryInfoBackground": "rgba(0, 0, 0, .7)",
+                "galleryThumbnailSize": "100px",
+                "gridSize": "280px",
+                "gridSpacing": "10px",
+                "logoContainerWidth": "140px",
+                "product-gallery-auto-crop": "false",
+                "product-image-auto-crop": "true",
+                "siteTitleContainerWidth": "220px"
+            },
+            "templateId": "569d71b65dc6dec58719ac1a",
+            "pageFeatures": [1, 2, 4],
+            "impersonatedSession": false,
+            "isFacebookTab": false,
+            "tzData": {
+                "zones": [[-480, "US", "P%sT", null]],
+                "rules": {"US": [[1967, 2006, null, "Oct", "lastSun", "2:00", "0", "S"], [1987, 2006, null, "Apr", "Sun>=1", "2:00", "1:00", "D"], [2007, "max", null, "Mar", "Sun>=8", "2:00", "1:00", "D"], [2007, "max", null, "Nov", "Sun>=1", "2:00", "0", "S"]]}
+            }
+        };
+        SquarespaceFonts.loadViaContext();
+        Squarespace.load(window);
+
+    </script>
+
+    <!--[if gte IE 9]>
+    <link rel="stylesheet" type="text/css"
+          href="//static1.squarespace.com/static/sitecss/569ab3d3d8af100e8507d8d7/25/569d71b65dc6dec58719ac1a/569d71b75dc6dec58719ac38/49-05142015/1453526498099/site.css?&filterFeatures=false&part=1"/>
+    <link rel="stylesheet" type="text/css"
+          href="//static1.squarespace.com/static/sitecss/569ab3d3d8af100e8507d8d7/25/569d71b65dc6dec58719ac1a/569d71b75dc6dec58719ac38/49-05142015/1453526498099/site.css?&filterFeatures=false&part=2"/>
+    <link rel="stylesheet" type="text/css"
+          href="//static1.squarespace.com/static/sitecss/569ab3d3d8af100e8507d8d7/25/569d71b65dc6dec58719ac1a/569d71b75dc6dec58719ac38/49-05142015/1453526498099/site.css?&filterFeatures=false&part=3"/>
+    <link rel="stylesheet" type="text/css"
+          href="//static1.squarespace.com/static/sitecss/569ab3d3d8af100e8507d8d7/25/569d71b65dc6dec58719ac1a/569d71b75dc6dec58719ac38/49-05142015/1453526498099/site.css?&filterFeatures=false&part=4"/>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="//static.squarespace.com"></script>
+    <link rel="stylesheet" type="text/css"
+          href="//static1.squarespace.com/static/sitecss/569ab3d3d8af100e8507d8d7/25/569d71b65dc6dec58719ac1a/569d71b75dc6dec58719ac38/49-05142015/1453526498099/site.css?&filterFeatures=false&noMedia=true&part=1"/>
+    <link rel="stylesheet" type="text/css"
+          href="//static1.squarespace.com/static/sitecss/569ab3d3d8af100e8507d8d7/25/569d71b65dc6dec58719ac1a/569d71b75dc6dec58719ac38/49-05142015/1453526498099/site.css?&filterFeatures=false&noMedia=true&part=2"/>
+    <link rel="stylesheet" type="text/css"
+          href="//static1.squarespace.com/static/sitecss/569ab3d3d8af100e8507d8d7/25/569d71b65dc6dec58719ac1a/569d71b75dc6dec58719ac38/49-05142015/1453526498099/site.css?&filterFeatures=false&noMedia=true&part=3"/>
+    <link rel="stylesheet" type="text/css"
+          href="//static1.squarespace.com/static/sitecss/569ab3d3d8af100e8507d8d7/25/569d71b65dc6dec58719ac1a/569d71b75dc6dec58719ac38/49-05142015/1453526498099/site.css?&filterFeatures=false&noMedia=true&part=4"/>
+    <![endif]-->
+    <!--[if !IE]> -->
+    <link rel="stylesheet" type="text/css"
+          href="//static1.squarespace.com/static/sitecss/569ab3d3d8af100e8507d8d7/25/569d71b65dc6dec58719ac1a/569d71b75dc6dec58719ac38/49-05142015/1453526498099/site.css?&filterFeatures=false"/>
+    <!-- <![endif]-->
+
+    <!-- End of Squarespace Headers -->
+    <script>/* Must be below squarespace-headers */
+    (function () {
+        var e = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+        var t = document.documentElement;
+        if (!e && t) {
+            t.className = t.className.replace(/touch-styles/, '')
+        }
+    })()
+    </script>
+
+    {% block headers_scripts_after_sqs %}
+    <script src="//www.parsecdn.com/js/parse-1.6.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    {% endblock %}
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
+          <!--integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='common.css') }}" />
+
+    <script type="text/javascript">
+        var $SCRIPT_ROOT = {{
+            request.script_root | tojson | safe
+        }};
+    </script>
+
+    <!-- Google Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '{{ config["GA_API_KEY"] }}', 'auto');
+    ga('send', 'pageview');
+    </script>
+<!-- End Google Analytics -->
+    {% endblock %}
+</head>
+
+<body id="collection-569d5c7c5a5668a5945745a4"
+      class="transparent-header enable-nav-button nav-button-style-outline nav-button-corner-style-pill banner-button-style-solid banner-button-corner-style-pill banner-slideshow-controls-arrows meta-priority-date  hide-entry-author hide-list-entry-footer    hide-blog-sidebar center-navigation--info  gallery-design-grid aspect-ratio-auto lightbox-style-light gallery-navigation-bullets gallery-info-overlay-show-on-hover gallery-aspect-ratio-32-standard gallery-arrow-style-no-background gallery-transitions-fade gallery-show-arrows gallery-auto-crop   product-list-titles-under product-list-alignment-center product-item-size-11-square product-image-auto-crop product-gallery-size-11-square  show-product-price show-product-item-nav product-social-sharing  event-show-past-events event-thumbnails event-thumbnail-size-32-standard event-date-label  event-list-show-cats event-list-date event-list-time event-list-address   event-icalgcal-links  event-excerpts       hide-opentable-icons opentable-style-dark newsletter-style-light small-button-style-solid small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square button-style-solid button-corner-style-square tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-type-page collection-569d5c7c5a5668a5945745a4 collection-layout-default homepage mobile-style-available {% if has_banner_image %}has-banner-image{% endif %} general-page">
+{% block nav_bar %}
+<input type="checkbox" name="mobile-nav-toggle" id="mobileNavToggle" class="mobile-nav-toggle-box hidden"/><a href="#"
+                                                                                                              class="body-overlay"></a>
+<div class="sqs-announcement-bar-dropzone"></div>
+<div id="sidecarNav">
+    <div id="mobileNavWrapper" class="nav-wrapper" data-content-field="navigation-mobileNav">
+        <nav id="mobileNavigation">
+
+            {% if g.user %}
+            <div class="collection active homepage">
+                <a style="display: flex; align-items: center" href="{{ url_for('index') }}">
+                    <img style="width: 24px; height: 24px;" src="{{ url_for('static', filename='image/{}'.format('ic_home_white_48dp_1x.png')) }}"/>
+                    <span style="margin-left: 10px;display: inline">Find Vacation Rentals</span>
+                </a>
+            </div>
+            {% endif %}
+            <div class="collection active homepage">
+                <a href="tel:4153478038">
+                {{ config["VOYAJOY_PHONE_NUMBER"] }}
+                </a>
+            </div>
+            <div class="collection active homepage">
+                <a href="{{ url_for('index') }}">
+                Home
+                </a>
+            </div>
+
+            {% if not g.user %}
+                {% if request.path != '/signup' %}
+            <div class="external">
+                <a href="/signup">
+                    Sign Up
+                </a>
+            </div>
+                {% endif %}
+
+                {% if request.path != '/login' %}
+            <div class="external">
+                <a href="/login">
+                    Login
+                </a>
+            </div>
+                {% endif %}
+
+            {% else %}
+            <div class="external">
+                <a href="/logout">
+                    Logout
+                </a>
+            </div>
+
+
+            <a href="/dashboard">Reservations</a>
+
+            <div class="external">
+                <a href="/dashboard">
+                    {{ g.user.firstName }}
+                </a>
+            </div>
+            {% endif %}
+        </nav>
+    </div>
+
+
+</div>
+<div id="siteWrapper" class="clearfix">
+
+    <div class="sqs-cart-dropzone"></div>
+
+    <header id="header" class="show-on-scroll" data-offset-el=".index-section" data-offset-behavior="bottom"
+            role="banner">
+        <div class="header-inner">
+            <div id="logoWrapper" class="wrapper" data-content-field="site-title">
+
+                <h1 id="logoImage"><a href="/"><img
+                        src="http://res.cloudinary.com/djrymcpim/image/upload/v1455772813/voyajoy_logo_white_xrv2vl.png"
+                        alt="Voyajoy"/></a></h1>
+
+            </div><!-- comment the linebreak between these two elements because science
+          --><label for="mobileNavToggle" class="mobile-nav-toggle-label">
+            <div class="top-bar"></div>
+            <div class="middle-bar"></div>
+            <div class="bottom-bar"></div>
+        </label><label for="mobileNavToggle" class="mobile-nav-toggle-label fixed-nav-toggle-label">
+            <div class="top-bar"></div>
+            <div class="middle-bar"></div>
+            <div class="bottom-bar"></div>
+        </label><!-- comment the linebreak between these two elements because science
+          -->
+            <div id="headerNav">
+                <div id="mainNavWrapper" class="nav-wrapper" data-content-field="navigation-mainNav">
+                    <nav id="mainNavigation" data-content-field="navigation-mainNav">
+
+                        {% if g.user %}
+                        <div class="collection active homepage">
+                            <a style="display: flex; align-items: center" href="{{ url_for('index') }}">
+                                <img style="width: 24px; height: 24px;" src="{{ url_for('static', filename='image/{}'.format('ic_home_white_48dp_1x.png')) }}"/>
+                                <span style="margin-left: 10px;display: inline">Find Vacation Rentals</span>
+                            </a>
+                        </div>
+                        {% endif %}
+                        <div class="collection active homepage">
+                            <a href="tel:4153478038">
+                            {{ config["VOYAJOY_PHONE_NUMBER"] }}
+                            </a>
+                        </div>
+
+
+                        <div class="collection active homepage">
+                            <a href="/">
+                            Home
+                            </a>
+                        </div>
+
+                        <!--<div class="folder">-->
+                            <!--<input type="checkbox" name="folder-toggle-569c3995ab281050fe31b735"-->
+                                   <!--id="folder-toggle-569c3995ab281050fe31b735" class="folder-toggle-box hidden"/>-->
+                            <!--<label for="folder-toggle-569c3995ab281050fe31b735" class="folder-toggle-label" onclick-->
+                                   <!--data-href="//www.voyajoy.com/whatwedo">About</label>-->
+                            <!--<div class="subnav">-->
+
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        {% if not g.user %}
+                        {% if request.path != '/signup' %}
+                        <div class="external">
+                            <a href="/signup">
+                                Sign Up
+                            </a>
+                        </div>
+                        {% endif %}
+
+                        {% if request.path != '/login' %}
+                        <div class="external">
+                            <a href="/login">
+                                Login
+                            </a>
+                        </div>
+                        {% endif %}
+
+                        {% else %}
+                        <div class="dropdown collection active homepage">
+                            <div>
+                                <a href="/dashboard">
+                                    {{ g.user.firstName }}
+                                </a>
+                            </div>
+                            <div class="dropdown-content">
+                                <div class="dropdown-bg"></div>
+                                <a href="/dashboard">Reservations</a>
+                                <a href="/logout">Logout</a>
+                            </div>
+                        </div>
+
+                        {% endif %}
+
+
+                    </nav>
+                </div>
+                <!-- style below blocks out the mobile nav toggle only when nav is loaded -->
+                <style>.mobile-nav-toggle-label {
+                    display: inline-block !important;
+                }
+
+
+                </style>
+
+
+            </div>
+        </div>
+    </header>
+
+    {% endblock %}
+
+    {% block promoted_photo %}
+    {% endblock %}
+
+    {% block main %}
+    <main id="page" role="main">
+
+        <!-- comment the linebreak between these two elements because science
+        --><!-- comment the linebreak between these two elements because science
+        --><!-- comment the linebreak between these two elements because science
+        -->
+        <div id="content" class="main-content" data-content-field="main-content"
+             data-collection-id="569d5c7c5a5668a5945745a4" data-edit-main-image="Banner">
+            {% block content %}
+            {% endblock %}
+        </div><!-- comment the linebreak between these two elements because science
+                </
+        -->
+
+    </main>
+    {% endblock %}
+
+    {% block prefooter %}
+    {% include 'prefooter.html' %}
+    {% endblock %}
+
+    {% block footer %}
+    {% include 'footer.html' %}
+    {% endblock footer %}
+</div>
+
+{% block body_scripts_end %}
+{% endblock %}
+
+<script type="text/javascript"
+        src="https://static1.squarespace.com/static/ta/569ab3d3d8af100e8507d8d7/49/scripts/combo/?site.js&helpers.js&sticky.js&app.js"></script>x
+
+<script type="text/javascript" data-sqs-type="imageloader-bootstraper">
+    (function () {
+        if (window.ImageLoader) {
+            window.ImageLoader.bootstrap();
+        }
+    })();
+
+</script>
+<script>Squarespace.afterBodyLoad(Y);</script>
+
+<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('2330-602-10-9419');/*]]>*/</script><noscript><a href="https://www.olark.com/site/2330-602-10-9419/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->
+</body>
+</html>

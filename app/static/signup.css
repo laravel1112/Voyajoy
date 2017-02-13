@@ -1,0 +1,38 @@
+#sign-up-button {
+    margin-top: 1em;
+    width: 100%;
+    background-color: #56b944;
+    border-radius: 0.5em;
+    font-size: 0.9em;
+}
+
+.form-header {
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 2px;
+    font-family: proxima-nova;
+
+}
+
+.form-wrapper {
+    margin: 0px 20%;
+}
+
+.form-wrapper .field-list .field .field-element {
+    font-size: 0.9em;
+    border-radius: 0.2em;
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+#error-container li {
+    font-family: proxima-nova;
+    margin: 5px 0;
+    color: red;
+    font-size: 0.8em;
+}

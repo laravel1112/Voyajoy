@@ -1,0 +1,33 @@
+<div id="promotedGalleryWrapper" class="sqs-layout promoted-gallery-wrapper">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+
+<div class="banner-thumbnail-wrapper has-description" data-content-field="main-image"
+     data-collection-id="569d5c7c5a5668a5945745a4" data-edit-main-image="Banner"
+     data-annotation-alignment="bottom left">
+
+    <div class="color-overlay"></div>
+    <figure id="thumbnail" class="loading content-fill"><img
+            data-src="http://static1.squarespace.com/static/569ab3d3d8af100e8507d8d7/t/569d5c7c5a5668a5945745a1/1453079921164/bedroom.jpg"
+            data-image="http://static1.squarespace.com/static/569ab3d3d8af100e8507d8d7/t/569d5c7c5a5668a5945745a1/1453079921164/bedroom.jpg"
+            data-image-dimensions="1134x749" data-image-focal-point="0.5,0.5" alt="bedroom.jpg"/></figure>
+
+    <div class="desc-wrapper" data-collection-id="569d5c7c5a5668a5945745a4"><p><strong>Amazing deals at great
+        vacation homes from tonight to two weeks out</strong></p>
+        {% if search_enabled %}
+        <form action="/search" method="GET">
+            <div class="desc-wrapper" id="autocomplete-wrapper" data-collection-id="569d5c7c5a5668a5945745a4">
+                <input id="autocomplete" placeholder="Where do you want to go?" type="text"/>
+                       <!--onFocus="geolocate()"-->
+                <input name="city" type="hidden" id="city" value="" />
+                <input name="state" type="hidden" id="state" value="" />
+            </div>
+            <p><a style="cursor: pointer;" onclick="$(this).closest('form').submit()">Book now</a></p>
+        </form>
+        {% endif %}
+    </div>
+
+
+</div>

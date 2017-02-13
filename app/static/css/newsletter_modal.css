@@ -1,0 +1,79 @@
+#newsletter-module {
+    padding: 2em;
+}
+
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.newsletter-header {
+    font-size: 2.1em;
+    color: #4cb448;
+}
+
+.newsletter-text {
+    margin: 1em 0;
+    font-size: 1.2em;
+}
+
+#form-container {
+    text-align: center;
+}
+
+.newsletter-input,
+#mce-EMAIL {
+    width: 100%;
+    border: 1px solid #8c8c8c;
+    padding: 1em;
+}
+
+.newsletter-submit,
+#mc-embedded-subscribe {
+    text-align: center;
+    margin: 1em auto!important;
+}
+
+div[class=mce_inline_error] {
+    color: red;
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+#mce-error-response,
+#mce-error-response a {
+    color: red;
+    text-align: center;
+    margin: 0.5em;
+}
+
+#mce-success-response {
+    color: green;
+    text-align: center;
+    margin: 1em;
+}
+
+#newsletter-close {
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    padding: 1em;
+}
+
+#newsletter-close:hover {
+    background-color: lightblue;
+}

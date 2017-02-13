@@ -1,0 +1,27 @@
+{% extends 'no_banner_base.html' %}
+{% block headers_scripts_after_sqs %}
+<script src="//www.parsecdn.com/js/parse-1.2.2.min.js"></script>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='dashboard.css') }}">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+{% endblock %}
+
+
+{% block main %}
+<!--<div class="dashboard-nav-bar" style="text-align: center;">-->
+    <!--<div class="dashboard-nav-bar-item"><p>Reservations</p>-->
+        <!--<div></div>-->
+    <!--</div>-->
+    <!--<div class="dashboard-nav-bar-item"><p onclick="getListings()">Listings</p><div></div></div>-->
+    <!--<div class="dashboard-nav-bar-item"><p onclick="getAccount()">Account</p><div></div></div>-->
+
+<!--</div>-->
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<div id="trips-module">
+    {% include 'dashboard_reservation_module.html' %}
+</div>
+{% endblock %}
+
+{% block prefooter %}{% endblock %}

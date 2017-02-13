@@ -1,0 +1,138 @@
+{% extends 'no_banner_base.html' %}
+{% block headers_scripts_before_sqs %}
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='voyajoy.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='listing.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='booking.css') }}">
+<style type="text/css">
+    .receipt-details {
+        text-align: center;
+        margin-bottom: 0.2em;
+        color: black;
+        font-size: 1em;
+        font-weight: 300;
+    }
+
+    .payment-container {
+        margin: 2em 0;
+        text-align: center;
+    }
+
+    .payment-info {
+        font-size: 1em;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1453844027783"
+     id="page-56a7e300b2094365987d2630">
+    <div class="row sqs-row">
+        <div class="col sqs-col-12 span-12">
+            <div class="sqs-block html-block sqs-block-html" data-block-type="2"
+                 id="block-yui_3_17_2_5_1453843107952_7130">
+                <div class="sqs-block-content">
+                    <h1 id="booking-request-headline" style="font-weight: 300; font-size: 1.5em; font-family: proxima-nova-bold;" class="text-align-center">{{ reservation.listing.headline }}</h1>
+                    <h1 id="booking-request-headline" style="font-weight: 300; font-size: 1.2em; font-family: proxima-nova-bold;"class="text-align-center">{{ reservation.listing.creator.firstName }} (Host)</h1>
+                </div>
+                <div style="text-align: center; margin: 1em 0;" class="receipt-details-container">
+                    <p class="receipt-details">{{ get_friendly_date(reservation.updatedAt)
+                        }}</p>
+                    <p class="receipt-details">Reservation #: {{ reservation.objectId }}</p>
+                </div>
+                <div class="receipt-details">Booking Status: {% if reservation.approved %}<span>Confirmed</span>{%
+                    else %}<span>Pending Approval</span>{% endif %}
+                </div>
+            </div>
+            <div class="sqs-block image-block sqs-block-image" data-aspect-ratio="25.418410041841007"
+                 data-block-type="5" id="block-yui_3_17_2_5_1453843107952_5955">
+                <div class="sqs-block-content">
+                    <div class="image-block-outer-wrapper layout-caption-hidden ">
+
+                        <div class="intrinsic" style="max-width:1134.0px;">
+
+                            <a href="{{ url_for('get_rental', listing_id=reservation.listing.objectId, _external=True) }}">
+                                <div style="padding-bottom:25.41840934753418%;"
+                                     class="image-block-wrapper   has-aspect-ratio" data-description="">
+                                    <noscript><img
+                                            src="{{ reservation.listing.photos[0].large }}"/>
+                                    </noscript>
+                                    <img class="thumb-image"
+                                         data-src="{{ reservation.listing.photos[0].large }}"
+                                         data-image="{{ reservation.listing.photos[0].large }}"
+                                         data-image-dimensions="1134x749" data-image-focal-point="0.5,0.5"
+                                         data-load="false" data-image-id="56a7e322fd5d085cde94885c"
+                                         data-type="image"/>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sqs-block html-block sqs-block-html" data-block-type="2"
+                 id="block-yui_3_17_2_5_1453843107952_8975">
+                <div class="sqs-block-content">
+                    {% include 'date_container.html' %}
+
+                    <div class="cost-overview-container">
+                        <div id="left-column-cost-overview">
+                            <p>Guests:</p>
+                            {% if config['USE_DYNAMIC_PRICING'] %}
+                            <p>{{ reservation.numNights}} nights:</p>
+                            {% else %}
+                            <p>${{ reservation.rentalFee }} x {{ reservation.numNights}} nights:</p>
+                            {% endif %}
+                            {% if reservation.cleaningFee > 0 %}
+                            <p>Cleaning Fee:</p>
+                            {% endif %}
+                            {% if reservation.securityDeposit > 0 %}
+                            <p>Security Deposit:</p>
+                            {% endif %}
+                            <p>Total:</p>
+                        </div>
+                        <div id="right-column-cost-overview">
+                            <p>{{ reservation.numGuests }}</p>
+                            {% if reservation.discountedRate > 0 %}
+                            <p>
+                                <span style="text-decoration: line-through;">
+                                    ${{ reservation.rentalFeeTotalWithoutDiscount }}
+                                </span>
+                                <span style="color: #4CB448;">
+                                    ${{ reservation.rentalFeeTotalWithDiscount|int }} ({{ reservation.discountedRate }}% off)
+                                </span>
+                            </p>
+                            {% else %}
+                            <p>${{ reservation.rentalFeeTotalWithoutDiscount }}</p>
+                            {% endif %}
+                            {% if reservation.cleaningFee > 0 %}
+                            <p>${{ reservation.cleaningFee }}</p>
+                            {% endif %}
+                            {% if reservation.securityDeposit > 0 %}
+                            <p>${{ reservation.securityDeposit }}</p>
+                            {% endif %}
+                            <!--<p>CA Tax ({{ reservation.taxRate }}%): ${{ reservation.taxes }}</p>-->
+                            <p>${{ reservation.total|int }}</p>
+                        </div>
+                    </div>
+                    {% if reservation.approved %}
+                    <div class="payment-container">
+                        <p class="payment-info">Your credit card will not be charged unless the host approves your
+                            request</p>
+                    </div>
+                    {% else %}
+                    <div class="payment-container">
+                        <p class="payment-info">Your credit card will not be charged unless the host approves your
+                            request</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block prefooter %}
+{% endblock %}

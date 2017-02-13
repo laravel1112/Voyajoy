@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "proxima-nova"; src: url('fonts/ProximaNova-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "proxima-nova-bold"; src: url('fonts/ProximaNova-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "proxima-nova-light"; src: url('fonts/ProximaNova-Light.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('fonts/glyphicons-halflings-regular.eot');
+    src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+strong em {
+    font-family: "proxima-nova-bold";
+}
+
+.desc-wrapper p>strong, .desc-wrapper p>em>strong,
+.sqs-block-content h2 strong {
+    font-family: "proxima-nova-bold" ! important;
+}
+
+#mc_embed_signup_scroll h1 {
+    font-family: "proxima-nova";
+}

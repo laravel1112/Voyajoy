@@ -1,0 +1,117 @@
+p {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif ! important;
+}
+
+#trips-module {
+}
+
+#trips-module .trips-module-header {
+    background-color: #4e4e4e;
+    width: 100%;
+}
+
+#trips-module .trips-module-header p {
+    font-size: 1em;
+    color: white;
+    padding: 1em;
+    letter-spacing: 1px;
+}
+
+
+.trips-module-body {
+    padding: 0.2em 0
+}
+
+.inner-body {
+    height: auto;
+    padding: 1.5em;
+    background-color: #fdfdfd;
+}
+
+
+.row-header {
+    font-size: 1.5em;
+    color: black;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.inner-body img {
+    height: 200px;
+    width: 100%;
+}
+
+.inner-body div p {
+    margin: 0;
+}
+
+/*.trips-row .row-sub-header {*/
+    /*color: black;*/
+    /*margin: 0.5em 1em;*/
+    /*font-size: 1.1em;*/
+/*}*/
+
+.inner-body .row-sub-header {
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #3d3d3d;
+}
+
+#page {
+    padding-top: 2em;
+}
+
+.dashboard-nav-bar {
+    background-color: #eeeeee;
+    padding: 0px 250px;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: flex-start;*/
+    align-items: center;
+}
+
+.dashboard-nav-bar-item {
+    margin: 0 1em;
+    position: relative;
+}
+
+.dashboard-nav-bar-item p {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    font-family: proxima-nova-bold;
+    letter-spacing: 1px;
+    margin: 10px 0;
+    padding: 0;
+    height: 100%;
+    /*cursor: pointer;*/
+}
+
+.dashboard-nav-bar-item div {
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    background-color: #0ba540;
+    height: 7px;
+    width: 100%;
+}
+
+.material-card-simple {
+  background: #fff;
+  border-radius: 2px;
+  display: block;
+  margin: 1rem;
+}
+
+.material-card {
+  background: #fff;
+  border-radius: 2px;
+  display: block;
+  margin: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.2s ease-in-out;
+}
+
+.material-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}

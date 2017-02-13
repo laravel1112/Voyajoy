@@ -1,0 +1,57 @@
+dashboard_reservation_module.html{% if reservations_to_approve %}
+<div class="trips-module-header">
+    <p>YOUR ACCOUNT</p>
+</div>
+<div class="trips-module-body">
+    {% for reservation in reservations_to_approve %}
+    <div class="trips-row">
+        <p>Your trip on {{ get_friendly_date(reservation.arrivalDate) }} - {{
+            get_friendly_date(reservation.departureDate) }}</p>
+        <a href="/rentals/{{ reservation.listing.objectId }}">
+            <div class="inner-body">
+                <img src="{{ reservation.listing.photos[0].large }}"/>
+                <div style="position:relative;left:1em;margin-right:1em;">
+                    <p>{{ reservation.listing.headline }}</p>
+                    <p class="row-sub-header">{{ reservation.listing.bedrooms }}BR/{{ reservation.listing.bathrooms
+                        }}BA - {{ reservation.listing.housingType }}</p>
+                    <p class="row-sub-header">{{ reservation.listing.placeDetails.city }}, {{
+                        reservation.listing.placeDetails.state }}</p>
+                </div>
+            </div>
+            <form action="/_submit_for_settlement" method="post">
+                <input type="hidden" name="reservation_id" value="{{ reservation.objectId }}"/>
+                <input type="submit" class="voyajoy-btn" value="Approve"/>
+                <input type="submit" class="voyajoy-btn" value="Deny"/>
+
+            </form>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+
+    {% if listings %}
+    <div class="trips-module-header">
+        <p>YOUR LISTINGS</p>
+    </div>
+    <div class="trips-module-body">
+        {% for listing in listings %}
+        <div class="trips-row">
+            <a href="/rentals/{{ listing.objectId }}">
+                <div class="inner-body">
+                    <img src="{{ listing.photos[0].large }}"/>
+                    <div style="position:relative;left:1em;margin-right:1em;">
+                        <p>{{ listing.headline }}</p>
+                        <p class="row-sub-header">{{ listing.bedrooms }}BR/{{ listing.bathrooms
+                            }}BA - {{ listing.housingType }}</p>
+                        <p class="row-sub-header">{{ listing.placeDetails.city }}, {{
+                            listing.placeDetails.state }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}

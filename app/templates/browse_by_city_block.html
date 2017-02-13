@@ -1,0 +1,44 @@
+<div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1453243512088"
+     id="page-569d5c7c5a5668a5945745a4" style="background-color: lightgray">
+    <div class="row sqs-row">
+        <div class="col sqs-col-12 span-12">
+            <div class="sqs-block code-block sqs-block-code" data-block-type="23"
+                 id="block-yui_3_17_2_3_1453240859384_11159">
+                <div class="sqs-block-content">
+                    <div id="nameYourOwnDiv">
+                    </div>
+                </div>
+            </div>
+            <div class="sqs-block html-block sqs-block-html" data-block-type="2"
+                 id="block-yui_3_17_2_12_1453158231643_10111">
+                <div class="sqs-block-content">
+                    <h1 class="featured-homes text-align-center" style="margin: 2em 0"><strong>BROWSE VACATION HOMES BY CITY</strong></h1>
+                    {% for city_row in cities | batch(3, '&nbsp;') %}
+                    <div class="row sqs-row">
+                        {% for city in city_row %}
+                        <div class="col sqs-col-4 span-4">
+                            <div class="sqs-block image-block sqs-block-image" data-block-type="5">
+                                <div class="sqs-block-content" style="height: 250px;">
+                                    <a style="cursor: pointer;">
+                                        <div style="position: relative; display: table; width: 100%; height: 100%;background-image: url('{{ city.image }}')">
+                                            <div style="position: relative; background-color: black; opacity: 0.2; height: 100%; height: 100%"></div>
+                                            <div style="display: table; position: absolute; top: 0; right: 0; left: 0;">
+                                                <div style="display: table-cell; vertical-align: middle;">
+                                                    <div style="text-align: center; font-size:2em; color:white;text-transform: uppercase; opacity: 1">
+                                                        <p>{{ city.city }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
